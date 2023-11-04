@@ -1,0 +1,14 @@
+.click-button{
+
+    height: 40px;
+    width: 80px;
+    border-radius: 20px;
+    border: none;
+    margin: 10px;
+
+}
+.value{
+    font-size: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
