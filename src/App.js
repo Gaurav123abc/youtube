@@ -28,7 +28,7 @@ function App() {
           <Routes>
 
             <Route path="/" element={<HomeComp/>}></Route>
-            <Route path="/videos" element={<VideoComp/>}></Route>
+            <Route path="/videos/:id" element={<VideoComp/>}></Route>
 
 
 

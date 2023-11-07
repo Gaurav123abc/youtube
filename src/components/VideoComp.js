@@ -2,11 +2,28 @@ import ".././CSS/homecomponent.css";
 import Header from "./header";
 import "../CSS/videogrid.css";
 import Videogrid from "./videogrid";
-import videos from ".././videos.json"
+import videos from ".././videos.json";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 // import React, {Component} from 'react';
 
-function VideoComp () {
+function VideoComp (props) {
+    // const id = props.id;
+    const params = useParams();
+    const id = params.id;
+    const link = "https://www.youtube.com/embed/"+ id +"?rel=0&mute=1&autoplay=1";
+    const video = videos.find(finderfunction)
 
+    function finderfunction(video) {
+        return video.id === id;
+    }
+
+    const vid_data = video;
+
+
+
+    
     return(
 
         <div className="main">
@@ -15,17 +32,17 @@ function VideoComp () {
 
                 <div className="Video">
                     <div className="play-area">
-                    <iframe width="960" height="498" src="https://www.youtube.com/embed/n-PgPuFhrEY?si=1SPaIUmd0sLdHOlC?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
+                    <iframe width="960" height="498" src={link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
                     </div>
                     <div className="play-data">
-                        <div className="vid-title">Em Beihold - Numb Little Bug (Piano Version Video)</div>
+                        <div className="vid-title">{vid_data.title}</div>
                         <div className="vid-data">
                             <div className="section-1">
-                                <img className="ico" src="" alt=""></img>
+                                <img className="ico" src={vid_data.thumbnail.url} alt=""></img>
                                 <div className="name">
                                     
-                                    <div className="channel-name">EMBeihold</div>
-                                    <div className="channel-Sub">1 Million Subscribers</div>
+                                    <div className="channel-name">{vid_data.channelName}</div>
+                                    <div className="channel-Sub">Null Subscribers</div>
                                     
                                 </div>
                                 <input className="Sub-btn" type="button" value="Subscribe"></input>
@@ -38,9 +55,11 @@ function VideoComp () {
                                 <input className="share" type="button" value="Share"></input>
                             </div>
                         </div>
-                        <div className="vid-description">mai hoon description</div>
+                        <div className="vid-description">{vid_data.description}</div>
                     </div>
                 </div>
+
+                
                 <div className="Video-bar">
 
                     {
@@ -52,6 +71,7 @@ function VideoComp () {
                                 grid_title={video.title}
                                 grid_channel={video.channelName}
                                 grid_channel_data={video.views}
+                                sub_id = {video.id}
                                 
                                 ></Videogrid>
 
@@ -70,9 +90,10 @@ function VideoComp () {
                     }
                     
                     
+                    
                 </div>
 
-
+                
 
             </div>
 

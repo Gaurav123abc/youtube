@@ -1,15 +1,22 @@
+import { Outlet, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 function Videocard(props) {
     const vid_title = props.vid_title;
     const thumbnail_uri =  props.thumbnail_uri; 
     const logo_uri = props.logo_uri;
     const channel_name = props.channel_name;
     const channel_view = props.channel_view;
-    const time = props.time;      
+    const time = props.time;
+    const id = props.id;  
+    // const params = useParams();
+    // const id = params.id;   
     // we have only prop , and we will pass it like above 
 
 
     return(
-
+        <Link to={"/videos/"
+        +id}>
         <div className="box">
                 <div className="content">
                     <img src={thumbnail_uri} alt=""></img>
@@ -22,6 +29,7 @@ function Videocard(props) {
                     </div>
                 </div>
             </div>
+            </Link>
 
 
 

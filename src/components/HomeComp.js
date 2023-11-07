@@ -5,6 +5,8 @@ import Bar_card from "./bar_card";
 import "../CSS/videopage.css";
 import videos from ".././videos.json";
 import channel from ".././channel.json";
+import { Outlet, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
 // import "th1.jpg"
@@ -20,13 +22,21 @@ const sub = ["https://yt3.ggpht.com/lMAY3t4inrnUH_ebLWrmJbHyZhrZ_Lk59xANfEbgMjLA
 
 
 function HomeComp() {
+
+ 
+
+
   return (
     <div className="parent">
       <div className="header">
+      
         <div className="head-sec1">
+        <Link to="/">
           <img className="logo" src="https://cdn.discordapp.com/attachments/829976806776897556/1170612671180197959/youtube.png?ex=6559ad01&is=65473801&hm=938d757c6cdca4ecb56fc803f2fa2f9079b011075f0e948a97b6f5937e8c9e11&" alt=""></img>
+          </Link>
           <div className="logo-text">Youtube</div>
         </div>
+        
         <div className="head-sec2">
           <input className="searchbox" placeholder="Search Here" type="text"></input>
           <button className="search-button">
@@ -89,6 +99,8 @@ function HomeComp() {
             <Videocard vid_title="Total Guide for Health Insurance" thumbnail_uri={thunmnail_array[2]} logo_uri={logo_array[2]}
             channel_name="LLA - Labour Law Advisor" channel_view="1.1 Lakh views" time="2 Years"></Videocard>
 
+
+            
             {
               videos.map(function(video) {
                 return(
@@ -99,6 +111,7 @@ function HomeComp() {
                   channel_name={video.channelName}
                   channel_view={video.views}
                   time={video.uploadedAt}
+                  id={video.id}
 
                   
                   
@@ -109,6 +122,7 @@ function HomeComp() {
 
               })
             }
+            
             
 
             
