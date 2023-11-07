@@ -3,6 +3,9 @@ import "../CSS/sidebar.css";
 import Videocard from "./Videocard";
 import Bar_card from "./bar_card";
 import "../CSS/videopage.css";
+import videos from ".././videos.json";
+import channel from ".././channel.json";
+
 
 // import "th1.jpg"
 
@@ -26,7 +29,8 @@ function HomeComp() {
         </div>
         <div className="head-sec2">
           <input className="searchbox" placeholder="Search Here" type="text"></input>
-          <input className="search-button" type="button" value="🔍"></input>
+          <button className="search-button">
+          <img className="search-button-image" src="https://cdn.discordapp.com/attachments/1170627554017816626/1171287078743576686/search_1.png?ex=655c2119&is=6549ac19&hm=4665f03b9c1ae02aef8baca39441d0c89fc15e16330d587dd08387d7dfbbdf84&" alt=""></img></button>
         </div>
         <div className="">
             <form>
@@ -85,13 +89,27 @@ function HomeComp() {
             <Videocard vid_title="Total Guide for Health Insurance" thumbnail_uri={thunmnail_array[2]} logo_uri={logo_array[2]}
             channel_name="LLA - Labour Law Advisor" channel_view="1.1 Lakh views" time="2 Years"></Videocard>
 
-            <Videocard vid_title="Total Guide for Health Insurance" thumbnail_uri={thunmnail_array[2]} logo_uri={logo_array[2]}
-            channel_name="LLA - Labour Law Advisor" channel_view="1.1 Lakh views" time="2 Years"></Videocard>
+            {
+              videos.map(function(video) {
+                return(
+                  <Videocard
+                  vid_title={video.title}
+                  thumbnail_uri={video.thumbnail.url}
+                  logo_uri={video.thumbnail.url}
+                  channel_name={video.channelName}
+                  channel_view={video.views}
+                  time={video.uploadedAt}
 
-            <Videocard vid_title="Total Guide for Health Insurance" thumbnail_uri={thunmnail_array[2]} logo_uri={logo_array[2]}
-            channel_name="LLA - Labour Law Advisor" channel_view="1.1 Lakh views" time="2 Years"></Videocard>
-            <Videocard vid_title="Total Guide for Health Insurance" thumbnail_uri={thunmnail_array[2]} logo_uri={logo_array[2]}
-            channel_name="LLA - Labour Law Advisor" channel_view="1.1 Lakh views" time="2 Years"></Videocard>
+                  
+                  
+                  
+                  
+                  ></Videocard>
+                );
+
+              })
+            }
+            
 
             
           <div className="box"></div>

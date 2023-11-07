@@ -2,7 +2,8 @@ import ".././CSS/homecomponent.css";
 import Header from "./header";
 import "../CSS/videogrid.css";
 import Videogrid from "./videogrid";
-import videos from "../videos.json"
+import videos from ".././videos.json"
+// import React, {Component} from 'react';
 
 function VideoComp () {
 
@@ -14,7 +15,7 @@ function VideoComp () {
 
                 <div className="Video">
                     <div className="play-area">
-                    <iframe width="960" height="498" src="https://www.youtube.com/embed/n-PgPuFhrEY?si=1SPaIUmd0sLdHOlC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="960" height="498" src="https://www.youtube.com/embed/n-PgPuFhrEY?si=1SPaIUmd0sLdHOlC?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
                     </div>
                     <div className="play-data">
                         <div className="vid-title">Em Beihold - Numb Little Bug (Piano Version Video)</div>
@@ -47,7 +48,7 @@ function VideoComp () {
 
                             return(
                                 <Videogrid
-                                thumbnail_uri={video.thumbnail}
+                                thumbnail_uri={video.thumbnail.url}
                                 grid_title={video.title}
                                 grid_channel={video.channelName}
                                 grid_channel_data={video.views}
