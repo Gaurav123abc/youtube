@@ -1,0 +1,59 @@
+.gridcard{
+    margin: 4px;
+    height: 150px;
+    width: auto;
+    /* border: 1px solid; */
+    display: flex;
+    padding: 2px;
+}
+
+.gridcard:hover{
+    transform: scale3d(1.003, 1.003, 1);
+}
+
+.grid-thumbnail{
+    flex: 2.2;
+    /* border: 1px solid; */
+    width: 175px;
+    height: 140px;
+    margin: 2px;
+    align-self: center;
+    justify-self: center;
+}
+
+.grid-data{
+    flex: 3;
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 4px;
+
+}
+
+.grid-data-title{
+    flex: 1.5;
+    /* border: 1px solid; */
+    justify-self: center;
+    align-self: center;
+    margin: 2px;
+    font-weight: bold;
+    
+}
+.grid-data-channel{
+    flex: 1.2;
+    /* border: 1px solid; */
+    color: gray;
+    font-size: 14px;
+    margin: 2px;
+    
+}
+.grid-data-chdata{
+    flex: 1.2;
+    color: gray;
+    font-size: 15px;
+    /* border: 1px solid; */
+    
+}
+
+

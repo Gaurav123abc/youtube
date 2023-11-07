@@ -17,7 +17,7 @@ function Videocard(props) {
                         <img className="channel-logo" src={logo_uri} alt="user"></img>
                         <div className="text">
                             <div className="Title">{vid_title}</div>
-                            <div className="channeldata"><i>{channel_name}</i><br></br> {channel_view} • {time} ago</div>
+                            <div className="channeldata">{channel_name}<br></br> {channel_view} • {time} ago</div>
                         </div>
                     </div>
                 </div>
