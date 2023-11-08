@@ -25,17 +25,29 @@ function VideoComp (props) {
     
     const [like, Setlike] = useState(0);
     
-    function clickchange() {
+    function Likeclickchange() {
         let likes = like + 1;
         Setlike(likes)
+        LikeRef.current.style.backgroundColor = 'black';
+        LikeRef.current.style.color = "white";
     }
 
-    const myRef = useRef(null);
+    function Sub_change() {
+        subRef.current.innerHTML="Subscribed";
+        subRef.current.style.backgroundColor = "rgb(196, 196, 196)";
+        subRef.current.style.color = "black";
+        subRef.current.style.border = "1px";
+
+
+    }
+    
+
+    const LikeRef = useRef(null);
+    const subRef = useRef(null);
 
     function changeColor(){
-        if (myRef.current) {
-            myRef.current.style.backgroundColor = 'black';
-            myRef.current.style.color = "white";
+        if (LikeRef.current) {
+            
           }
     }
 
@@ -68,12 +80,13 @@ function VideoComp (props) {
                                     <div className="channel-Sub">Null Subscribers</div>
                                     
                                 </div>
-                                <input className="Sub-btn" type="button" value="Subscribe"></input>
+                                <button onClick={Sub_change} className="Sub-btn" ref={subRef}>Subscribe</button>
+                                
                             </div>
                             <div className="section2">
                                 <div className="feel">
-                                    <button ref={myRef}
-                                    onClick={clickchange} className="liked">{like}   Likes</button>
+                                    <button ref={LikeRef}
+                                    onClick={Likeclickchange} className="liked">{like}   Likes</button>
                                     <button className="dislike">Dislike</button>
                                 </div>
                                 <button className="share">Share</button>
