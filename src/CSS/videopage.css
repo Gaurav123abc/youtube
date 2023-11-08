@@ -62,7 +62,7 @@
 
 }
 
-.section-1{
+.sec-1{
     height: 60px;
     width: 300px;
     /* border: 1px solid; */
@@ -70,7 +70,7 @@
     /* padding: 1px; */
     padding-left: 4px;
     justify-content: space-between;
-
+    
 }
 
 .ico{
@@ -114,7 +114,7 @@
 
 .section2{
     height: 60px;
-    width: 200px;
+    width: 250px;
     /* border: 1px solid; */
     display: flex;
     /* padding: 1px; */
@@ -135,7 +135,7 @@
 
 .liked,.dislike,.share{
     height: 40px;
-    width: 60px;
+    width: 80px;
     border-radius: 20px;
     border: 0.1px solid rgb(0, 0, 0);
     color: black;

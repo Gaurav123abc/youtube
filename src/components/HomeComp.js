@@ -44,7 +44,10 @@ function HomeComp() {
         </div>
         <div className="">
             <form>
+            
+            <Link to="/login">
             <input className="head-sec3" type="button" value="Sign in"></input>
+            </Link>
             </form>
           
         </div>

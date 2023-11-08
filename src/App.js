@@ -6,6 +6,7 @@ import './App.css';
 // import Click from './click.js';
 import VideoComp from './components/VideoComp';
 import HomeComp from './components/HomeComp';
+import Logincard from './components/logincomp';
 
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
@@ -29,7 +30,7 @@ function App() {
 
             <Route path="/" element={<HomeComp/>}></Route>
             <Route path="/videos/:id" element={<VideoComp/>}></Route>
-
+            <Route path="/login" element={<Logincard/>}></Route>
 
 
           </Routes>

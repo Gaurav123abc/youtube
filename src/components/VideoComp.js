@@ -5,14 +5,16 @@ import Videogrid from "./videogrid";
 import videos from ".././videos.json";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import { useState } from "react";
+// import React, { Component } from 'react';
+import React, { useRef, useEffect } from 'react';
 // import React, {Component} from 'react';
 
 function VideoComp (props) {
     // const id = props.id;
     const params = useParams();
     const id = params.id;
-    const link = "https://www.youtube.com/embed/"+ id +"?rel=0&mute=1&autoplay=1";
+    const link = "https://www.youtube.com/embed/"+ id +"?rel=0&mute=1&autoplay=0";
     const video = videos.find(finderfunction)
 
     function finderfunction(video) {
@@ -20,8 +22,29 @@ function VideoComp (props) {
     }
 
     const vid_data = video;
+    
+    const [like, Setlike] = useState(0);
+    
+    function clickchange() {
+        let likes = like + 1;
+        Setlike(likes)
+    }
 
+    const myRef = useRef(null);
 
+    function changeColor(){
+        if (myRef.current) {
+            myRef.current.style.backgroundColor = 'black';
+            myRef.current.style.color = "white";
+          }
+    }
+
+    
+    useEffect(changeColor, [like]);
+
+    // const like_btn = document.getElementById("like");
+    // console.log(like_btn);
+    // like_btn.style.backgroundColor = "black";
 
     
     return(
@@ -37,7 +60,7 @@ function VideoComp (props) {
                     <div className="play-data">
                         <div className="vid-title">{vid_data.title}</div>
                         <div className="vid-data">
-                            <div className="section-1">
+                            <div className="sec-1">
                                 <img className="ico" src={vid_data.thumbnail.url} alt=""></img>
                                 <div className="name">
                                     
@@ -49,10 +72,11 @@ function VideoComp (props) {
                             </div>
                             <div className="section2">
                                 <div className="feel">
-                                    <input className="liked" type="button" value="Like"></input>
-                                    <input className="dislike" type="button" value="Dislike"></input>
+                                    <button ref={myRef}
+                                    onClick={clickchange} className="liked">{like}   Likes</button>
+                                    <button className="dislike">Dislike</button>
                                 </div>
-                                <input className="share" type="button" value="Share"></input>
+                                <button className="share">Share</button>
                             </div>
                         </div>
                         <div className="vid-description">{vid_data.description}</div>
