@@ -88,7 +88,7 @@
 .search-button{
     width: 95px;
     height: 40px;
-    border: 0.1px solid rgb(146, 146, 146);
+    border: 0.1px solid rgb(203, 203, 203);
     border-radius: 23px;
     /* margin-right: 25px; */
     /* background-color: rgb(255, 255, 255); */
@@ -97,7 +97,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: rgb(241, 241, 241);
 
 }
 .search-button-image{
@@ -106,7 +106,7 @@
     /* border: 0.1px solid rgb(146, 146, 146); */
     border-radius: 0px;
     margin-right: 25px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(241, 241, 241);
     margin-left: 10px;
     /* border-bottom-left-radius: 0px;
     border-top-left-radius: 0px; */

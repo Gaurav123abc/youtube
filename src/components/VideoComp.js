@@ -14,7 +14,7 @@ function VideoComp (props) {
     // const id = props.id;
     const params = useParams();
     const id = params.id;
-    const link = "https://www.youtube.com/embed/"+ id +"?rel=0&mute=1&autoplay=0";
+    const link = "https://www.youtube.com/embed/"+ id +"?rel=0&mute=0&autoplay=1";
     const video = videos.find(finderfunction)
 
     function finderfunction(video) {

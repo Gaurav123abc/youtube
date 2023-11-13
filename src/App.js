@@ -7,11 +7,16 @@ import './App.css';
 import VideoComp from './components/VideoComp';
 import HomeComp from './components/HomeComp';
 import Logincard from './components/logincomp';
+import SearchComp from "./components/search";
 
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { useState } from 'react';
 
 
 function App() {
+
+  // const [data,Setdata] = useState('');
+
   return (
     <div className="parent-main">
       <header className="header-main">
@@ -31,7 +36,7 @@ function App() {
             <Route path="/" element={<HomeComp/>}></Route>
             <Route path="/videos/:id" element={<VideoComp/>}></Route>
             <Route path="/login" element={<Logincard/>}></Route>
-
+            <Route path="/search/:input_field" element={<SearchComp/>}></Route>
 
           </Routes>
       

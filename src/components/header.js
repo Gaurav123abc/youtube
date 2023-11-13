@@ -1,6 +1,57 @@
+import { useEffect, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
+import SearchComp from "./search";
+import { useNavigate } from "react-router-dom";
+
+const apiKey = "AIzaSyDhKMmi1gkyHmxZs00luUcgHMXirgErexc";
+const apiUrl = "https://www.googleapis.com/youtube/v3/search";
 
 function Header() {
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [input_field, Setinput] = useState("");
+  let input_data;
+
+  function Handleinput(query) {
+    input_data = query.target.value;
+    Setinput(input_data);
+  }
+
+  // let data;
+  // const query = input_field;
+  async function SearchYT(query) {
+    setIsLoading(true);
+    try {
+      // localStorage.setItem('youtubeData', null);
+      const url = `${apiUrl}?part=snippet&maxResults=30&q=${encodeURIComponent(
+        query
+      )}&key=${apiKey}`;
+
+      // console.log(encodeURIComponent(query));
+
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log(data);
+      const jsonString = JSON.stringify(data, null, 2);
+      // const blob = new Blob([jsonString], { type: 'application/json' });
+      // fs.writeFileSync('./example.json', jsonString, 'utf-8');
+      localStorage.setItem("youtubeData", jsonString);
+    } catch (error) {
+      console.log(error);
+      alert("Something error Occured" + error);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  function getResult() {
+    // alert("File saved");
+    // localStorage.setItem('youtubeData', null);
+    SearchYT(input_field);
+    // navigate("/search/" + input_field);
+  }
+
   return (
     <div className="header">
       <div className="head-sec1">
@@ -19,8 +70,20 @@ function Header() {
           className="searchbox"
           placeholder="Search Here"
           type="text"
+          value={input_field}
+          onChange={Handleinput}
         ></input>
-        <input className="search-button" type="button" value="🔍"></input>
+        <form>
+          <Link to={"/search/" + input_field}>
+          <button onClick={getResult} className="search-button">
+            <img
+              className="search-button-image"
+              src="https://cdn.discordapp.com/attachments/1170627554017816626/1171287078743576686/search_1.png?ex=655c2119&is=6549ac19&hm=4665f03b9c1ae02aef8baca39441d0c89fc15e16330d587dd08387d7dfbbdf84&"
+              alt=""
+            ></img>
+          </button>
+          </Link>
+        </form>
       </div>
       <div className="">
         <form>
