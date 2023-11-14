@@ -30,6 +30,23 @@
 
 }
 
+.videos-result-head{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    /* white-space: nowrap; */
+    text-wrap: nowrap;
+}
+
+.videos-result-head-text{
+    /* text-wrap: nowrap; */
+    font-size: 25px;
+    font-style: italic;
+    font-weight: 600;
+    color: blue;
+    display: inline;
+}
+
 
 
 .gridcard-1{

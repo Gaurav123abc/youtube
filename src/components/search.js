@@ -31,6 +31,11 @@ function SearchComp() {
 
     // useEffect(reload,[]);
 
+    
+    
+   
+   
+    
     return(
         <div  className="parent">
             <Header></Header>
@@ -41,6 +46,10 @@ function SearchComp() {
 
                     </div>
                     <div className="videos-result">
+
+                        <div className="videos-result-head">
+                        You Searched for :<div className="videos-result-head-text"> {input_field}</div>
+                        </div>
                         {/* <Searchcard grid_thumbSC="https://cdn.discordapp.com/attachments/829976806776897556/1170627552348471367/th2.jpg?ex=6559badd&is=654745dd&hm=4524b4c9788d0902a72c07b14b52f34abb023c860c4e1c94554dd8a8c12e2c93&" grid_titleSC="Hi Im a Title" grid_chnameSC="Electroboom" grid_chviewsSC="3974239" grid_idSC="9fhiofjweo"></Searchcard> */}
 
                          
@@ -72,6 +81,8 @@ function SearchComp() {
         
 
     );
+
+    
 
 }
 

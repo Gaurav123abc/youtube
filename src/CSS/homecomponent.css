@@ -23,6 +23,7 @@
     position: -webkit-sticky;
     top: 0;
     background-color: white;
+    z-index: 3;
 
 }
 
@@ -130,6 +131,9 @@
     border: 1px solid none;
     display: flex;
     flex-direction: row;
+    /* position: -webkit-sticky;
+    position: sticky;
+    top: -1; */
     /* border-top: solid black; */
 }
 
@@ -139,13 +143,14 @@
     height: auto;
     border: 1px solid none;
     /* border-right: 1px solid black; */
-    position: -webkit-sticky;
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
     gap: 5px;
     /* justify-content: center; */
     padding: 5px;
     flex-direction: column;
+    /* z-index: 1; */
 }
 
 
@@ -161,6 +166,8 @@
     margin: 5px;
     justify-content: center;
     align-items: center;
+    /* position: absolute;
+    right: 0; */
 
 }
 

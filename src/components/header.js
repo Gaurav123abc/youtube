@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import SearchComp from "./search";
 import { useNavigate } from "react-router-dom";
+import dotenv from 'dotenv';
 
-const apiKey = "AIzaSyDhKMmi1gkyHmxZs00luUcgHMXirgErexc";
+const apiKey = process.env.YOUTUBE_APP_API_TOKEN;
 const apiUrl = "https://www.googleapis.com/youtube/v3/search";
 
 function Header() {
-  const navigate = useNavigate();
+  dotenv.config();
+
+  // const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
 
   const [input_field, Setinput] = useState("");
@@ -43,12 +46,15 @@ function Header() {
     } finally {
       setIsLoading(false);
     }
+
+    window.location.reload();
   }
 
   function getResult() {
     // alert("File saved");
     // localStorage.setItem('youtubeData', null);
     SearchYT(input_field);
+    alert("Searching for : " + input_field);
     // navigate("/search/" + input_field);
   }
 
