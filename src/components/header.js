@@ -2,14 +2,17 @@ import { useEffect, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import SearchComp from "./search";
 import { useNavigate } from "react-router-dom";
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 
 
 const apiUrl = "https://www.googleapis.com/youtube/v3/search";
 
 function Header() {
-  dotenv.config();
-  const apiKey = process.env.YOUTUBE_APP_API_TOKEN;
+  // dotenv.config();
+
+
+  const apiKey = process.env.REACT_APP_YOUTUBETOKEN;
+  // console.log(apiKey);
 
   // const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
