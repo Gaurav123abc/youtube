@@ -58,6 +58,14 @@ function VideoComp (props) {
     // console.log(like_btn);
     // like_btn.style.backgroundColor = "black";
 
+    function share(){
+        const copyText = "https://www.youtube.com/watch?v="+id; 
+        navigator.clipboard.writeText(copyText);
+
+        // Alert the copied text
+        alert("Video URL Copied to Clipboard ");
+    }
+
     
     return(
 
@@ -89,7 +97,8 @@ function VideoComp (props) {
                                     onClick={Likeclickchange} className="liked">{like}   Likes</button>
                                     <button className="dislike">Dislike</button>
                                 </div>
-                                <button className="share">Share</button>
+                                <button
+                                onClick={share} className="share">Share</button>
                             </div>
                         </div>
                         <div className="vid-description">{vid_data.description}</div>

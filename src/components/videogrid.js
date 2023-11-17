@@ -12,18 +12,19 @@ function Videogrid(props) {
 
 
   return (
-    <Link to={"/videos/"
-        +sub_id} target="_parent">
+    
     <div className="gridcard">
+      <Link to={"/videos/"
+        +sub_id} target="_parent">
       <img className="grid-thumbnail" src={thumbnail_uri} alt=""></img>
-
+      </Link>
       <div className="grid-data">
         <div className="grid-data-title">{grid_title}</div>
         <div className="grid-data-channel">{grid_channel}</div>
         <div className="grid-data-chdata">{grid_channel_data} Subscriber</div>
       </div>
     </div>
-    </Link>
+    
   );
 }
 

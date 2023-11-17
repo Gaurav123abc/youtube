@@ -12,24 +12,26 @@ function Videocard(props) {
     // const params = useParams();
     // const id = params.id;   
     // we have only prop , and we will pass it like above 
-
+    // console.log(id);
 
     return(
-        <Link to={"/videos/"
-        +id}>
+        
         <div className="box">
                 <div className="content">
+                <Link to={"/videos/"
+                +id}>
                     <img src={thumbnail_uri} alt=""></img>
+                    </Link>
                     <div className="caption">
                         <img className="channel-logo" src={logo_uri} alt="user"></img>
                         <div className="text">
                             <div className="Title">{vid_title}</div>
-                            <div className="channeldata">{channel_name}<br></br> {channel_view} • {time} ago</div>
+                            <div className="channeldata">{channel_name}<br></br> {channel_view} Views • {time} ago</div>
                         </div>
                     </div>
                 </div>
             </div>
-            </Link>
+            
 
 
 

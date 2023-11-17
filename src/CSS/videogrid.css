@@ -12,9 +12,9 @@
 }
 
 .grid-thumbnail{
-    flex: 2.2;
+    flex: 3;
     /* border: 1px solid; */
-    width: 175px;
+    width: 210px;
     height: 140px;
     margin: 2px;
     align-self: center;

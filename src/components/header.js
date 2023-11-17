@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
-import SearchComp from "./search";
-import { useNavigate } from "react-router-dom";
+// import SearchComp from "./search";
+// import { useNavigate } from "react-router-dom";
 // import dotenv from 'dotenv';
 
 
@@ -9,8 +9,6 @@ const apiUrl = "https://www.googleapis.com/youtube/v3/search";
 
 function Header() {
   // dotenv.config();
-
-
   const apiKey = process.env.REACT_APP_YOUTUBETOKEN;
   // console.log(apiKey);
 
@@ -18,10 +16,10 @@ function Header() {
   const [isLoading, setIsLoading] = useState(false);
 
   const [input_field, Setinput] = useState("");
-  let input_data;
+  
 
   function Handleinput(query) {
-    input_data = query.target.value;
+    const input_data = query.target.value;
     Setinput(input_data);
   }
 
@@ -84,7 +82,7 @@ function Header() {
           onChange={Handleinput}
         ></input>
         <form>
-          <Link to={"/search/" + input_field}>
+          <Link to={"/search/" + input_field} target="_parent">
           <button onClick={getResult} className="search-button">
             <img
               className="search-button-image"

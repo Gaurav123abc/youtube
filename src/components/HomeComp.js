@@ -31,7 +31,7 @@ function HomeComp() {
         <Sidebar></Sidebar>
         <div className="videos">
             
-            <Videocard vid_title="HEAVY CONSTRUCTION of Sewage?" thumbnail_uri={thunmnail_array[0]} logo_uri={logo_array[0]}
+            {/* <Videocard vid_title="HEAVY CONSTRUCTION of Sewage?" thumbnail_uri={thunmnail_array[0]} logo_uri={logo_array[0]}
             channel_name="Practical Enginering" channel_view="1.3M views" time="2 days"></Videocard>
 
             <Videocard vid_title="Insane Engineering of Percy" thumbnail_uri={thunmnail_array[1]} logo_uri={logo_array[1]}
@@ -40,7 +40,7 @@ function HomeComp() {
             <Videocard vid_title="Total Guide for Health Insurance" thumbnail_uri={thunmnail_array[2]} logo_uri={logo_array[2]}
             channel_name="LLA - Labour Law Advisor" channel_view="1.1 Lakh views" time="2 Years"></Videocard>
             <Videocard vid_title="Total Guide for Health Insurance" thumbnail_uri={thunmnail_array[2]} logo_uri={logo_array[2]}
-            channel_name="LLA - Labour Law Advisor" channel_view="1.1 Lakh views" time="2 Years"></Videocard>
+            channel_name="LLA - Labour Law Advisor" channel_view="1.1 Lakh views" time="2 Years"></Videocard> */}
 
 
             
