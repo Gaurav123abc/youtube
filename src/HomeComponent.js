@@ -50,13 +50,13 @@ function HomeComponent() {
                   <br/>Home</a></div>
             <div className="sidetrend">
                 <a href="trending.html">
-                    <i className="fa-solid fa-fire"></i> <br/> Trending Page </a>
+                    <i className="fa-solid fa-fire"></i> <br/> Trending </a>
             </div>
             <div className="sidesub"> 
-                <a href="subscription.html"><i className="fa-solid fa-clapperboard"></i>Subscriptions</a>
+                <a href="subscription.html"><i className="fa-solid fa-clapperboard"></i>Subscription</a>
             </div>
             <div className="sidelib"> 
-                <a href="library.html"><i className="fa-solid fa-folder"></i><br/> Chanels</a>
+                <a href="library.html"><i className="fa-solid fa-folder"></i><br/> Library</a>
             </div>
           </div>
 

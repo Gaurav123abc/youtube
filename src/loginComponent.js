@@ -6,7 +6,7 @@ function loginComponent() {
         const passwordInput = document.getElementById("Password");
         const email = emailInput.value;
         const password = passwordInput.value;
-        if(email == "gaurav@gmail.com" && password == "g1234"){
+        if(email == "pnayak@gmail.com" && password == "Pawan"){
             localStorage.setItem("LoggedIn",true);
             window.location.href ="/";
         }else{
