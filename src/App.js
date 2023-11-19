@@ -1,52 +1,29 @@
-// import logo from './logo.svg';
+
 import './App.css';
-// import Comp from './Comp';
-// import Formcomponent from './form.js';
-// import Boom_boom from './bim_bam_boom.js';
-// import Click from './click.js';
-import VideoComp from './components/VideoComp';
-import HomeComp from './components/HomeComp';
-
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomeComponent from './HomeComponent';
+import VideoComponent from './VideoContent';
+import VideoPage from './VideoPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import LoginComponent from './loginComponent';
 
 function App() {
   return (
-    <div className="parent-main">
-      <header className="header-main">
+    <div className="App">
+
+      <BrowserRouter>
+        <Routes>
         
-        {/* <Comp></Comp>
-        <Formcomponent></Formcomponent>
-        <Formcomponent></Formcomponent> */}
-        {/* <Boom_boom></Boom_boom>
-        <Click></Click> */}
+          <Route path='/' element={<HomeComponent></HomeComponent>}></Route>
+          <Route path='/video/:id' element={<VideoComponent></VideoComponent>}></Route>
+          <Route path='/vedioPage/:id' element={<VideoPage></VideoPage>}></Route>
+          <Route path='/login' element={<LoginComponent/>}></Route>
 
-{/* Routing in React npm install react-router-dom */}
+        </Routes>
+      </BrowserRouter>
 
-        <BrowserRouter>
-        
-          <Routes>
-
-            <Route path="/" element={<HomeComp/>}></Route>
-            <Route path="/videos" element={<VideoComp/>}></Route>
-
-
-
-          </Routes>
-      
-        </BrowserRouter>
-
-
-
-
-
-      </header>
-      
     </div>
-   
-    
   );
-  
 }
 
 export default App;
